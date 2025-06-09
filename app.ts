@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import transactionsRoutes from "./src/routes/transactionsRoutes";
 import { AppDataSource } from "./data-source";
+import 'dotenv/config';
 
 const app = express();
 const cors = require('cors');
@@ -19,7 +20,7 @@ async function startServer() {
       res.send("API OK!");
     });
 
-    app.use((err: Error, req: Request, res: Response) => {
+    app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
       console.error("Unexpected error:", err);
       res.status(500).json({
         error: "Internal server error",

@@ -4,6 +4,6 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: docker
-      POSTGRES_PASSWORD: docker
+      POSTGRES_USER: vini
+      POSTGRES_PASSWORD: admin123
       POSTGRES_DB: suricato
