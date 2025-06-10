@@ -6,11 +6,10 @@ import transactionsRoutes from "./src/routes/transactionsRoutes";
 const app = express();
 const cors = require('cors');
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://contai-three.vercel.app'
+}));
 app.use(express.json());
-
-console.log('PORT:', process.env.PORT);
-console.log('DATABASE_URL:', process.env.DATABASE_URL);
 
 async function startServer() {
   try {
