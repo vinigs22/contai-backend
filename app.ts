@@ -6,9 +6,11 @@ import transactionsRoutes from "./src/routes/transactionsRoutes";
 const app = express();
 const cors = require('cors');
 
-app.use(cors({
-  origin: 'https://contai-three.vercel.app'
-}));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://contai-three.vercel.app"],
+  })
+);
 app.use(express.json());
 
 async function startServer() {

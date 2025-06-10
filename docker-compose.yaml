@@ -1,19 +1,12 @@
 services:
-  app:
-    build: .
-    ports:
-      - "3000:3000"
-    depends_on:
-      - postgres
-    env_file:
-      - .env
-
   postgres:
     image: bitnami/postgresql
     ports:
       - "5432:5432"
-    env_file:
-      - .env
+    environment:
+      - POSTGRES_USER=vini
+      - POSTGRES_PASSWORD=admin123
+      - POSTGRES_DB=suricato
     volumes:
       - postgres_data:/bitnami/postgresql
 
