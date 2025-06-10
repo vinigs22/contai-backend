@@ -1,13 +1,16 @@
-import express, { Request, Response, NextFunction } from "express";
-import transactionsRoutes from "./src/routes/transactionsRoutes";
-import { AppDataSource } from "./data-source";
 import 'dotenv/config';
+import express, { NextFunction, Request, Response } from "express";
+import { AppDataSource } from "./data-source";
+import transactionsRoutes from "./src/routes/transactionsRoutes";
 
 const app = express();
 const cors = require('cors');
 
 app.use(cors());
 app.use(express.json());
+
+console.log('PORT:', process.env.PORT);
+console.log('DATABASE_URL:', process.env.DATABASE_URL);
 
 async function startServer() {
   try {

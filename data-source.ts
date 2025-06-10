@@ -4,11 +4,11 @@ import { Transaction } from "./src/entities/Transaction";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
-  host: process.env.DB_HOST || "localhost",
-  port: parseInt(process.env.DB_PORT || "5432"),
-  username: process.env.DB_USERNAME || "docker",
-  password: process.env.DB_PASSWORD || "docker",
-  database: process.env.DB_NAME || "suricato",
+  host: process.env.PGHOST || "postgres",
+  port: parseInt(process.env.PGHOST || "5432"),
+  username: process.env.PGUSER || "vini",
+  password: process.env.PGPASSWORD || "admin123",
+  database: process.env.PGDATABASE || "suricato",
   synchronize: true, 
   logging: false,
   entities: [Transaction],
